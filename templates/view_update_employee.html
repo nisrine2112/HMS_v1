@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container-fluid mt-2 p-3 bg-primary-subtle text-dark">
-    <h1 class="text-center">You are in View & Update Patient</h1>
+    <h1 class="text-center">You are in View & Update Employee</h1>
 </div>
 
 <form method="POST">
@@ -9,24 +9,28 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Phone</th>
-                <th>Address</th>
+                <th>Employee ID</th>
+                <th>Full Name</th>
+                <th>Role</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Shift</th>
                 <th>Action</th>
             </tr>
         </thead>
 
         <tbody>
-            {% for p in patients %}
+            {% for employee in employees %}
             <tr>
-                <td>{{ p.id }}</td>
-                <td>{{ p.name }}</td>
-                <td>{{ p.age }}</td>
-                <td>{{ p.phone }}</td>
-                <td>{{ p.address }}</td>
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.employeeID }}</td>
+                <td>{{ employee.fullName }}</td>
+                <td>{{ employee.role }}</td>
+                <td>{{ employee.phoneNumber }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.shift }}</td>
                 <td>
-                    <a href="/edit_patient/{{ p.id }}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/edit_employee/{{ employee.id }}" class="btn btn-warning btn-sm">Edit</a>
                 </td>
             </tr>
             {% endfor %}

@@ -56,10 +56,12 @@ def edit_patient(id):
 def add_employee():
     if request.method == "POST":
         data = {
-            "name": request.form["name"],
-            "age": request.form["age"],
-            "phone": request.form["phone"],
-            "address": request.form["address"]
+            "employeeID": request.form["employeeID"],
+            "fullName": request.form["fullName"],
+            "role": request.form["role"],
+            "phoneNumber": request.form["phoneNumber"],
+            "email": request.form["email"],
+            "shift": request.form["shift"]
         }
 
         add_employee_services(data)
@@ -76,10 +78,12 @@ def view_update_employee():
 def edit_employee(id):
     employee = Employee.query.get(id)
     if request.method == "POST":
-        employee.name = request.form["name"]
-        employee.age = request.form["age"]
-        employee.phone = request.form["phone"]
-        employee.address = request.form["address"]
+        employee.employeeID = request.form["employeeID"]
+        employee.fullName = request.form["fullName"]
+        employee.role = request.form["role"]
+        employee.phoneNumber = request.form["phoneNumber"]
+        employee.email = request.form["email"]
+        employee.shift = request.form["shift"]
 
         db.session.commit()
         return "Data Updated Successfully"
