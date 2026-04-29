@@ -1,6 +1,6 @@
 from models.models_patient import db, Patient
 
-def add_patient_service(data):
+def add_patient_services(data):
 
     patient = Patient(
         name=data["name"],
